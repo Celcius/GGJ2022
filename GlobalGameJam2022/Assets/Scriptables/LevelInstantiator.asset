@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc63a3402c554847b693eaecc40be5c, type: 3}
+  m_Name: LevelInstantiator
+  m_EditorClassIdentifier: 
+  _gridDefinition:
+    StartPosition: {x: 0, y: 0, z: 0}
+    WidthOffset: 10
+    HeightOffset: 10
+  _rules:
+  - Identifier: Start Black
+    Prefab: {fileID: 6378110431973610832, guid: 2bb48deddc0a2004da23b6c7c8cdcc20, type: 3}
+  - Identifier: Start White
+    Prefab: {fileID: 6189079775642417673, guid: 5af799423c9674743b46d3af701181e4, type: 3}
+  - Identifier: Arrow Left
+    Prefab: {fileID: 6677362666959452617, guid: dc88d0dc970eb364aaf28ffe518fa5a4, type: 3}
+  - Identifier: Arrow Right
+    Prefab: {fileID: 5665877142629689782, guid: e3fcb70249650174d8be4c0c60a13e6c, type: 3}
+  - Identifier: Arrow Up
+    Prefab: {fileID: 3224550379201745855, guid: 3cb8ee41f68b32246b340ef338659d13, type: 3}
+  - Identifier: Arrow Down
+    Prefab: {fileID: 1602866636740471286, guid: 69509e3ef20a7e0428acfaceca8a9af8, type: 3}
+  - Identifier: End Black
+    Prefab: {fileID: 7419093271164912916, guid: d287fd8b53df73046b13cfac4af08fd2, type: 3}
+  - Identifier: End White
+    Prefab: {fileID: 5084925303880818225, guid: 5f4ee4a0d6bde0b49b7ca0df39a772eb, type: 3}
