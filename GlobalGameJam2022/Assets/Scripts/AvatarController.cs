@@ -6,7 +6,7 @@ public class AvatarController : MonoBehaviour
 {
     public Vector2 direction = new Vector2(200f, 0f);
     public GameObject arrow;
-    public KeyCode moveKey = KeyCode.Space;
+    public Board board;
     private Rigidbody2D body;
     private bool toMove = false;
 
@@ -15,7 +15,7 @@ public class AvatarController : MonoBehaviour
     }
 
     void Update() {
-        if(Input.GetKeyUp(moveKey)) {
+        if(Input.GetKeyUp(board.moveKey)) {
             toMove = true;
         }
     }
