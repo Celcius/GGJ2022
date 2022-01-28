@@ -7,12 +7,21 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class LevelDefinition : ScriptableObject
+[System.Serializable]
+public class LevelDefinition : ScriptableObject, ISerializationCallbackReceiver
 {
     public const int MAP_LEN = 7;
 
     public int MapWidth => MAP_LEN;
     public int MapHeight => MAP_LEN;
+
+    [HideInInspector]
+    [SerializeField]
+    private string[] _flattenedMap;
+
+    [HideInInspector]
+    [SerializeField]
+    private int _flattenedRows;
 
     private string[,] _mapCharacters = new string[MAP_LEN, MAP_LEN];
     public  string[,] MapCharacters
@@ -26,6 +35,31 @@ public class LevelDefinition : ScriptableObject
         return _mapCharacters[x,y];
     }
 
+    public void OnBeforeSerialize()
+     {
+         int c1 = _mapCharacters.GetLength(0);
+         int c2 = _mapCharacters.GetLength(1);
+         int count = c1*c2;
+         _flattenedMap = new string[count];
+         _flattenedRows = c1;
+         for(int i = 0; i < count; i++)
+         {
+             _flattenedMap[i] = _mapCharacters[i % c1, i / c1];
+         }
+     }
+     
+     public void OnAfterDeserialize()
+     {
+         int count = _mapCharacters.Length;
+         int c1 = _flattenedRows;
+         int c2 = count / c1;
+         _mapCharacters = new string[c1,c2];
+         for(int i = 0; i < count; i++)
+         {
+             _mapCharacters[i % c1, i / c1] = _flattenedMap[i];
+         }
+     }
+
 }
 #if UNITY_EDITOR
 [CustomEditor(typeof(LevelDefinition))]
@@ -35,12 +69,16 @@ public class EditorLevelDefinition : Editor
     int _mapLen;
     string[] _rules;       
 
-    const string EMPTY_LABEL = "Empty";
+    const string EMPTY_LABEL = "-";
+
+    SerializedObject levelObj;
 
     public void OnEnable()
     {
         _definition = (LevelDefinition) target;
         _mapLen = LevelDefinition.MAP_LEN;
+
+        levelObj = new SerializedObject(target);
 
         string[] rules =  LevelInstantiator.Instance.GetRuleIdentifiers();
         _rules = new string[rules.Length+1];
@@ -53,9 +91,9 @@ public class EditorLevelDefinition : Editor
 
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
-        string[,] newMap = new string[_mapLen, _mapLen];
+        levelObj.Update();
 
+        DrawDefaultInspector();
         GUILayout.BeginVertical();
 
         for(int i = 0; i < _mapLen; i++)
@@ -71,24 +109,38 @@ public class EditorLevelDefinition : Editor
                 //string text = GUILayout.TextField(isValid? (""+ character) : "", 1);
                 if(choice == 0)
                 {
-                    newMap[i,j] = EMPTY_LABEL;
+                    _definition.MapCharacters[i,j] = EMPTY_LABEL;
                 }
                 else
                 {
                     string text = _rules[choice];
 
-                    newMap[i,j] = string.IsNullOrWhiteSpace(text)? EMPTY_LABEL : text;
+                    _definition.MapCharacters[i,j] = string.IsNullOrWhiteSpace(text)? EMPTY_LABEL : text;
                 }
             }
             GUILayout.EndHorizontal();
         }
         GUILayout.EndVertical();
-        _definition.MapCharacters = newMap;
+
+
+        if(GUILayout.Button("Clear Map"))
+        {
+            _definition.MapCharacters = new string[_mapLen, _mapLen];
+        }
+
+        GUILayout.Space(10);
 
         if(GUILayout.Button("Instantiate - DO NOT PRESS IF YOU DON'T KNOW WHAT UR DOING"))
         {
             LevelInstantiator.Instance.Instantiate(_definition);
         }
+
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(target);
+        }
+
+        levelObj.ApplyModifiedProperties();
     }
 }
 

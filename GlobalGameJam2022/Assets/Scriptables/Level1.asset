@@ -12,3 +12,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff50e81a6c456242855b415c6e5db6b, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
+  _flattenedMap:
+  - '-'
+  - '-'
+  - '-'
+  - Start White
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - End White
+  - '-'
+  - '-'
+  - Arrow Up
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - Arrow Down
+  - '-'
+  - '-'
+  - End Black
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - Start Black
+  - '-'
+  - '-'
+  - '-'
+  _flattenedRows: 7
