@@ -72,6 +72,8 @@ public class AvatarController : MonoBehaviour, IResettableCallback
 
                 SoundSystem.Instance.PlaySound(_finishLineSound, "Finish");
             }
+        } else if (other.gameObject.GetComponent<Board>() != null) {
+            StartCoroutine(gameOver());
         } else if (other.gameObject.GetComponent<AvatarController>() != null) {
             StartCoroutine(gameOver());
             if(!SoundSystem.Instance.IsPlaying("Collision"))
