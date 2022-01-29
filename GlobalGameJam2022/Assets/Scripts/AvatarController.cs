@@ -19,13 +19,13 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     }
 
     void Update() {
-        if(Input.GetKeyUp(board.moveKey)) {
+        if(Input.GetKeyUp(board.moveKey) && !finished) {
             toMove = true;
         }
     }
 
     void FixedUpdate() {
-        if(toMove && !finished) {
+        if(toMove) {
             body.MovePosition(transform.position + new Vector3(direction.x, direction.y));
             toMove = false;
         }
@@ -42,8 +42,8 @@ public class AvatarController : MonoBehaviour, IResettableCallback
             FinishLine finishLine = other.gameObject.GetComponent<FinishLine>();
             if(finishLine.isDark == isDark) {
                 print("Collision!");
-                LevelManager.Instance.FinishLevel();
                 finished = true;
+                LevelManager.Instance.FinishLevel();
             }
         }
     }

@@ -1,31 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!61 &6690679277550971540
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3788245137598626087}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1001 &834602936815816079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1152488712789712196, guid: af69b8b8af3154746b0c2dc3fe534e4a, type: 3}
+      propertyPath: isDark
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4541763758880273574, guid: af69b8b8af3154746b0c2dc3fe534e4a, type: 3}
       propertyPath: m_fontColor.b
       value: 1
@@ -139,8 +117,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af69b8b8af3154746b0c2dc3fe534e4a, type: 3}
---- !u!1 &3788245137598626087 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4541763758880273576, guid: af69b8b8af3154746b0c2dc3fe534e4a, type: 3}
-  m_PrefabInstance: {fileID: 834602936815816079}
-  m_PrefabAsset: {fileID: 0}
