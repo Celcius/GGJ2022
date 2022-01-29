@@ -333,8 +333,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -483.5}
-  m_SizeDelta: {x: 1770, y: 33}
+  m_AnchoredPosition: {x: 960, y: -489.5}
+  m_SizeDelta: {x: 1770, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559059954
 MonoBehaviour:
@@ -553,8 +553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -624.5}
-  m_SizeDelta: {x: 1770, y: 67}
+  m_AnchoredPosition: {x: 960, y: -675.5}
+  m_SizeDelta: {x: 1770, y: 101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923116912
 MonoBehaviour:
@@ -589,7 +589,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Freakshow - by Sharkshock \rdennis@sharkshock.net\nCatherine - by murisa.studio@gmail.com\r"
+  m_Text: "Freakshow Font by Sharkshock \rdennis@sharkshock.net\nCatherine Font by
+    murisa.studio@gmail.com\r\nHigh Heels L-R.wav by BenBoncan @ freesound.org"
 --- !u!222 &923116913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -632,8 +633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -545.5}
-  m_SizeDelta: {x: 1770, y: 91}
+  m_AnchoredPosition: {x: 960, y: -591}
+  m_SizeDelta: {x: 1770, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954864982
 MonoBehaviour:
@@ -657,20 +658,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c3dcb499462c1274da441e75027a7588, type: 3}
-    m_FontSize: 40
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-    Font'
+  m_Text: Creative Commons, Attribution Assets
 --- !u!222 &954864983
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -989,8 +988,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -444.5}
-  m_SizeDelta: {x: 1770, y: 45}
+  m_AnchoredPosition: {x: 960, y: -388}
+  m_SizeDelta: {x: 1770, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737318156
 MonoBehaviour:
@@ -1014,11 +1013,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c3dcb499462c1274da441e75027a7588, type: 3}
-    m_FontSize: 40
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
