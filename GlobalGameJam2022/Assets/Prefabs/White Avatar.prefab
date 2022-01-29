@@ -249,6 +249,12 @@ MonoBehaviour:
   board: {fileID: 0}
   finished: 0
   isDark: 0
+  _collisionSound: {fileID: 8300000, guid: d17951bc4a05a3a45af619d2f478935d, type: 3}
+  _turnSound: {fileID: 8300000, guid: dd4956f2f09544f45aee9bbf37aaf450, type: 3}
+  _finishLineSound: {fileID: 8300000, guid: 87e991129ec20f34dbb4bfb726c82c97, type: 3}
+  _stepSounds:
+  - {fileID: 8300000, guid: 42f56ef36ec27964dae11017acafc725, type: 3}
+  - {fileID: 8300000, guid: 5c46da09d45b7ba438ef21c0b466998e, type: 3}
   _finishedAvatars: {fileID: 11400000, guid: b7753dd9237ab5942a055a6c1994a44f, type: 2}
 --- !u!50 &7404962541086130498
 Rigidbody2D:

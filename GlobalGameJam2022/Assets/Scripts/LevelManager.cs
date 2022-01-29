@@ -19,6 +19,8 @@ public class LevelManager : Singleton<LevelManager>
     private float timeToReset = 0.15f;
     private float resetTimer = 0;
 
+    public bool HasMoved = false;
+    
     [SerializeField]
     private AvatarArrVar _finishedAvatars;
 
@@ -32,6 +34,12 @@ public class LevelManager : Singleton<LevelManager>
     private TextMeshProUGUI _poemLabel;
 
     public bool inputEnabled = false;
+
+    [SerializeField]
+    private AudioClip _restartSound;
+
+    [SerializeField]
+    private AudioClip _finishSound;
 
     public void Start()
     {
@@ -55,8 +63,14 @@ public class LevelManager : Singleton<LevelManager>
             resetTimer += Time.deltaTime;
             if(resetTimer > timeToReset)
             {
+                if(HasMoved)
+                {
+                    SoundSystem.Instance.PlaySound(_restartSound);
+                }
+                    
                 resetTimer = 0;
                 EntityManager.Instance.ResetLevel();
+                HasMoved = false;
                 EnableInput();
             }
 
@@ -117,6 +131,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public void FinishLevel()
     {
+        SoundSystem.Instance.PlaySound(_finishSound);
         NextLevel();
         _unlockedLevels.Value = Mathf.Max(_unlockedLevels.Value, 
                                           _selectedLevel.Value);

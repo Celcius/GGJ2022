@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AmoaebaUtils;
 
 public class AvatarController : MonoBehaviour, IResettableCallback
 {
@@ -12,6 +13,19 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     private bool toMove = false;
     public bool finished = false;
     public bool isDark = false;
+
+    [SerializeField]
+    private AudioClip _collisionSound;
+
+        [SerializeField]
+    private AudioClip _turnSound;
+
+
+    [SerializeField]
+    private AudioClip _finishLineSound;
+
+    [SerializeField]
+    private AudioClip[] _stepSounds;
 
     [SerializeField]
     private AvatarArrVar _finishedAvatars;
@@ -32,6 +46,8 @@ public class AvatarController : MonoBehaviour, IResettableCallback
         if(toMove) {
             body.MovePosition(transform.position + new Vector3(direction.x, direction.y));
             toMove = false;
+            SoundSystem.Instance.PlaySound(_stepSounds[isDark? 0 : 1]);
+            LevelManager.Instance.HasMoved = true;
         }
     }
 
@@ -41,6 +57,11 @@ public class AvatarController : MonoBehaviour, IResettableCallback
             if(changingArrow.IsDark == isDark) {
                 arrow.transform.rotation = other.transform.rotation;
                 direction = changingArrow.newDirection;
+
+                if(!SoundSystem.Instance.IsPlaying("Turn" + (isDark?"Dark" :"Light")))
+                {
+                    SoundSystem.Instance.PlaySound(_turnSound, "Turn"+ (isDark?"Dark" :"Light"));
+                }
             }
         } else if (other.gameObject.GetComponent<FinishLine>() != null) {
             FinishLine finishLine = other.gameObject.GetComponent<FinishLine>();
@@ -48,9 +69,15 @@ public class AvatarController : MonoBehaviour, IResettableCallback
                 print("Collision! " + (isDark? "Dark" : "Light"));
                 finished = true;
                 _finishedAvatars.Add(this);
+
+                SoundSystem.Instance.PlaySound(_finishLineSound, "Finish");
             }
         } else if (other.gameObject.GetComponent<AvatarController>() != null) {
             StartCoroutine(gameOver());
+            if(!SoundSystem.Instance.IsPlaying("Collision"))
+            {
+                SoundSystem.Instance.PlaySound(_collisionSound, "Collision");
+            }
         }
     }
 

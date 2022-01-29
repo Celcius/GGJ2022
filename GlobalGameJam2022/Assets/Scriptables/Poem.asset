@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Poem
   m_EditorClassIdentifier: 
   _lines:
-  - There once was a girl divided...
+  - There was once a girl divided...
   - 2
   - 3
   - 4

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using AmoaebaUtils;
 
 public interface IBoardListener
 {
@@ -16,6 +16,9 @@ public class Board : MonoBehaviour, IResettableCallback
     public KeyCode switchKey = KeyCode.Return;
     public int boardIndex = 0;
 
+    [SerializeField]
+    private AudioClip[] boardAudios;
+
     private SpriteRenderer _renderer;
 
     private List<IBoardListener> boardListeners = new List<IBoardListener>();
@@ -25,8 +28,10 @@ public class Board : MonoBehaviour, IResettableCallback
         _renderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update() {
-        if(Input.GetKeyDown(switchKey) && LevelManager.Instance.inputEnabled) {
+    void Update() 
+    {
+        if(Input.GetKeyDown(switchKey) && LevelManager.Instance.inputEnabled) 
+        {
             if(boardIndex == 1) {
                 _renderer.sprite = boards[0];
             } else {
@@ -34,6 +39,7 @@ public class Board : MonoBehaviour, IResettableCallback
             }
             boardIndex = 1 - boardIndex;
             BroadCastBoardChange();
+            SoundSystem.Instance.PlaySound(boardAudios[boardIndex]);
         }
     }
 

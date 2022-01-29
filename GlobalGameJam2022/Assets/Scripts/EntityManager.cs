@@ -5,6 +5,9 @@ using UnityEngine;
 public class EntityManager : SingletonScriptableObject<EntityManager>
 {
     private List<GameEntity> _entities = new List<GameEntity>();
+    
+    public  AvatarController _darkAvatar;
+    public  AvatarController _lightAvatar;
 
     public void PrepareGame()
     {
