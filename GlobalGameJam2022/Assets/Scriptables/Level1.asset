@@ -16,7 +16,7 @@ MonoBehaviour:
   - '-'
   - '-'
   - '-'
-  - Start White
+  - Start White Right
   - '-'
   - '-'
   - '-'
@@ -58,7 +58,7 @@ MonoBehaviour:
   - '-'
   - '-'
   - '-'
-  - Start Black
+  - Start Black Left
   - '-'
   - '-'
   - '-'

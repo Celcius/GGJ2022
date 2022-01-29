@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6354796596701722788}
   - component: {fileID: 8277466569942810806}
   m_Layer: 5
-  m_Name: Black Start Line
+  m_Name: Black Start Line Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.0102534, y: 2.5867918}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8934348348154329822

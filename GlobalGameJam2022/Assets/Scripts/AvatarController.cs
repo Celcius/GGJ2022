@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AvatarController : MonoBehaviour
+public class AvatarController : MonoBehaviour, IResettableCallback
 {
     public enum AvatarColor
     {
         Black,
         White
     }
+    public Vector2 startDirection;
     public Vector2 direction = new Vector2(200f, 0f);
     public GameObject arrow;
     public Board board;
@@ -41,5 +42,10 @@ public class AvatarController : MonoBehaviour
             arrow.transform.rotation = other.transform.rotation;
             direction = changingArrow.newDirection;
         }
+    }
+
+    public void OnReset()
+    {
+
     }
 }
