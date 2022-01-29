@@ -25,7 +25,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     }
 
     void FixedUpdate() {
-        if(toMove) {
+        if(toMove && !finished) {
             body.MovePosition(transform.position + new Vector3(direction.x, direction.y));
             toMove = false;
         }
@@ -41,6 +41,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
         } else if (other.gameObject.GetComponent<FinishLine>() != null) {
             FinishLine finishLine = other.gameObject.GetComponent<FinishLine>();
             if(finishLine.isDark == isDark) {
+                print("Collision!");
                 LevelManager.Instance.FinishLevel();
                 finished = true;
             }
