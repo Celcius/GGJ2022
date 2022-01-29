@@ -73,8 +73,10 @@ public class LevelInstantiator : SingletonScriptableObject<LevelInstantiator>
         return _identifierIndexes.ContainsKey(identifier) ? _identifierIndexes[identifier] : 0;
     }
 
-    public void Instantiate(LevelDefinition level)
+    public void InstantiateLevel(LevelDefinition level)
     {
+        EntityManager.Instance.PrepareGame();
+
         float widthOffset = _gridDefinition.GridSize.x;
         float heightOffset = _gridDefinition.GridSize.y;
         

@@ -47,11 +47,15 @@ public class LevelDefinition : ScriptableObject, ISerializationCallbackReceiver
              _flattenedMap[i] = _mapCharacters[i % c1, i / c1];
          }
      }
-     
+
      public void OnAfterDeserialize()
      {
          int count = _mapCharacters.Length;
          int c1 = _flattenedRows;
+         if(c1 == 0)
+         {
+             return;
+         }
          int c2 = count / c1;
          _mapCharacters = new string[c1,c2];
          for(int i = 0; i < count; i++)
@@ -61,6 +65,7 @@ public class LevelDefinition : ScriptableObject, ISerializationCallbackReceiver
      }
 
 }
+
 #if UNITY_EDITOR
 [CustomEditor(typeof(LevelDefinition))]
 public class EditorLevelDefinition : Editor
@@ -132,7 +137,7 @@ public class EditorLevelDefinition : Editor
 
         if(GUILayout.Button("Instantiate - DO NOT PRESS IF YOU DON'T KNOW WHAT UR DOING"))
         {
-            LevelInstantiator.Instance.Instantiate(_definition);
+            LevelInstantiator.Instance.InstantiateLevel(_definition);
         }
 
         if (GUI.changed)
