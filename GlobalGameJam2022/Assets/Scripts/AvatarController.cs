@@ -49,6 +49,8 @@ public class AvatarController : MonoBehaviour, IResettableCallback
                 finished = true;
                 _finishedAvatars.Add(this);
             }
+        } else if (other.gameObject.GetComponent<Board>() != null) {
+            StartCoroutine(gameOver());
         } else if (other.gameObject.GetComponent<AvatarController>() != null) {
             StartCoroutine(gameOver());
         }
