@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class AvatarController : MonoBehaviour, IResettableCallback
 {
-    public enum AvatarColor
-    {
-        Black,
-        White
-    }
     public Vector2 startDirection;
     public Vector2 direction = new Vector2(200f, 0f);
     public GameObject arrow;
     public Board board;
     private Rigidbody2D body;
     private bool toMove = false;
-    public AvatarColor AvatarType;
     public bool isDark = false;
 
     void Start() {
