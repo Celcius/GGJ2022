@@ -77,8 +77,8 @@ MonoBehaviour:
   isDark: 0
   _renderer: {fileID: 1733638419091748570}
   sprites:
-  - {fileID: 21300000, guid: a15fe9b3cc4b75b4984d4354dd226075, type: 3}
   - {fileID: 21300000, guid: 4e66ef4d3f151db45b3f007426cfad0e, type: 3}
+  - {fileID: 21300000, guid: a15fe9b3cc4b75b4984d4354dd226075, type: 3}
 --- !u!212 &1733638419091748570
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a15fe9b3cc4b75b4984d4354dd226075, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e66ef4d3f151db45b3f007426cfad0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

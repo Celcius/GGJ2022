@@ -31,6 +31,8 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField]
     private TextMeshProUGUI _poemLabel;
 
+    public bool inputEnabled = true;
+
     public void Start()
     {
         LoadCurrentLevel();

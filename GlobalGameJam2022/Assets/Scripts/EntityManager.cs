@@ -46,6 +46,7 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
 
     public void ResetLevel()
     {
+        LevelManager.Instance.inputEnabled = true;
         foreach(GameEntity entity in _entities)
         {
             entity.Reset();

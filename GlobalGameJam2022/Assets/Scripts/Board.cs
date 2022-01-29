@@ -26,7 +26,7 @@ public class Board : MonoBehaviour, IResettableCallback
     }
 
     void Update() {
-        if(Input.GetKeyDown(switchKey)) {
+        if(Input.GetKeyDown(switchKey) && LevelManager.Instance.inputEnabled) {
             if(boardIndex == 1) {
                 _renderer.sprite = boards[0];
             } else {

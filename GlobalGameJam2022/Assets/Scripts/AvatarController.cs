@@ -23,7 +23,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     }
 
     void Update() {
-        if(Input.GetKeyUp(board.moveKey) && !finished) {
+        if(Input.GetKeyUp(board.moveKey) && !finished && LevelManager.Instance.inputEnabled) {
             toMove = true;
         }
     }
@@ -49,7 +49,15 @@ public class AvatarController : MonoBehaviour, IResettableCallback
                 finished = true;
                 _finishedAvatars.Add(this);
             }
+        } else if (other.gameObject.GetComponent<AvatarController>() != null) {
+            StartCoroutine(gameOver());
         }
+    }
+
+    public IEnumerator gameOver() {
+        yield return new WaitForEndOfFrame();
+        LevelManager.Instance.inputEnabled = false;
+        EntityManager.Instance.ResetLevel();
     }
 
     public void OnReset()
