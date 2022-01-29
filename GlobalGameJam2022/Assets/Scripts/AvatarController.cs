@@ -15,8 +15,8 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     public Board board;
     private Rigidbody2D body;
     private bool toMove = false;
-    
     public AvatarColor AvatarType;
+    public bool isDark = false;
 
     void Start() {
         board = FindObjectsOfType<Board>()[0];
@@ -39,8 +39,10 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.GetComponent<ChangingArrow>() != null) {
             ChangingArrow changingArrow = other.gameObject.GetComponent<ChangingArrow>();
-            arrow.transform.rotation = other.transform.rotation;
-            direction = changingArrow.newDirection;
+            if(changingArrow.isDark == isDark) {
+                arrow.transform.rotation = other.transform.rotation;
+                direction = changingArrow.newDirection;
+            }
         }
     }
 
