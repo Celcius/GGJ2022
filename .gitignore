@@ -61,3 +61,16 @@ crashlytics-build.properties
 GlobalGameJam2022/Library/
 GlobalGameJam2022/Temp/
 GlobalGameJam2022/Logs/
+GlobalGameJam2022/obj/Debug/ActionCommands.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/ActionCommandsTests.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/AmoaebaCommands.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/AmoaebaLockSystem.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/AmoaebaUtils.CommandsEditor.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/AmoaebaUtils.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/AmoaebaUtils.Pathfinding.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/AmoaebaUtilsEditor.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/AmoaebaWallet.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/GGJ2022.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/PathfindingEditor.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/ScriptableObjectUtilsEditor.csproj.AssemblyReference.cache
+GlobalGameJam2022/obj/Debug/WalletTests.csproj.AssemblyReference.cache
