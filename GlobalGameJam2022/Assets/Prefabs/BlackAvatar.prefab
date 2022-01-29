@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: board
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7404962541086130497, guid: cbf7504205c78e34b9e61e112e8cfee4, type: 3}
+      propertyPath: isDark
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7404962541086130556, guid: cbf7504205c78e34b9e61e112e8cfee4, type: 3}
       propertyPath: m_RootOrder
       value: 0
