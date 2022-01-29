@@ -491,6 +491,7 @@ MonoBehaviour:
   direction: {x: 2, y: 0}
   arrow: {fileID: 677026279}
   board: {fileID: 499333775}
+  isDark: 1
 --- !u!61 &296402416
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -637,8 +638,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1779dd83515646141b691a5712108d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boards:
+  - {fileID: 21300000, guid: 0d5fbe7e6a6d9e54fa033d7702238ead, type: 3}
+  - {fileID: 21300000, guid: d250702e0faa89349bbdbaa58d0c2f73, type: 3}
   boardSquareSize: {x: 2, y: 1.3}
   moveKey: 32
+  switchKey: 13
+  boardIndex: 0
 --- !u!1 &677026279
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830708665}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 3.8, z: 0}
+  m_LocalPosition: {x: 0, y: 3.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 499333773}
@@ -887,6 +893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 499333775}
   newDirection: {x: 0, y: 0}
+  isDark: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,6 +1156,7 @@ MonoBehaviour:
   direction: {x: 2, y: 0}
   arrow: {fileID: 1645495778}
   board: {fileID: 499333775}
+  isDark: 0
 --- !u!1 &1645495778
 GameObject:
   m_ObjectHideFlags: 0

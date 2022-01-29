@@ -9,6 +9,7 @@ public class AvatarController : MonoBehaviour
     public Board board;
     private Rigidbody2D body;
     private bool toMove = false;
+    public bool isDark = false;
 
     void Start() {
         body = this.GetComponent<Rigidbody2D>();
@@ -30,8 +31,10 @@ public class AvatarController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.GetComponent<ChangingArrow>() != null) {
             ChangingArrow changingArrow = other.gameObject.GetComponent<ChangingArrow>();
-            arrow.transform.rotation = other.transform.rotation;
-            direction = changingArrow.newDirection;
+            if(changingArrow.isDark == isDark) {
+                arrow.transform.rotation = other.transform.rotation;
+                direction = changingArrow.newDirection;
+            }
         }
     }
 }
