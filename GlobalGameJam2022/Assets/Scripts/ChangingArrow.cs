@@ -8,6 +8,7 @@ public class ChangingArrow : MonoBehaviour
     public Vector2 newDirection;
 
     void Start() {
+        board = FindObjectsOfType<Board>()[0];
         if(transform.eulerAngles.z < 90) {
             newDirection = new Vector2(board.boardSquareSize.x, 0);
         } else if(90 <= transform.eulerAngles.z && transform.eulerAngles.z < 180) {

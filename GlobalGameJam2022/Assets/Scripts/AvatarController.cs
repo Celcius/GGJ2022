@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class AvatarController : MonoBehaviour
 {
+    public enum AvatarColor
+    {
+        Black,
+        White
+    }
     public Vector2 direction = new Vector2(200f, 0f);
     public GameObject arrow;
     public Board board;
     private Rigidbody2D body;
     private bool toMove = false;
+    
+    public AvatarColor AvatarType;
 
     void Start() {
+        board = FindObjectsOfType<Board>()[0];
         body = this.GetComponent<Rigidbody2D>();
     }
 

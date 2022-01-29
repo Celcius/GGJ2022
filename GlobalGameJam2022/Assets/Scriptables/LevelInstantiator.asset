@@ -16,18 +16,18 @@ MonoBehaviour:
     GridSize: {x: 2, y: 1.3}
   _rules:
   - Identifier: Start Black
-    Prefab: {fileID: 6378110431973610832, guid: 2bb48deddc0a2004da23b6c7c8cdcc20, type: 3}
+    Prefab: {fileID: 8934348348154329820, guid: 0b862028f7fee7a499a6e358d799f0ae, type: 3}
   - Identifier: Start White
-    Prefab: {fileID: 6189079775642417673, guid: 5af799423c9674743b46d3af701181e4, type: 3}
+    Prefab: {fileID: 6886712929346793215, guid: c0f6fc1039cfbd64a86ff0f1fa924ecd, type: 3}
   - Identifier: Arrow Left
-    Prefab: {fileID: 6677362666959452617, guid: dc88d0dc970eb364aaf28ffe518fa5a4, type: 3}
+    Prefab: {fileID: 9102494967761111891, guid: c5ece91f86b7b3c4aabeed491b0eabf8, type: 3}
   - Identifier: Arrow Right
-    Prefab: {fileID: 5665877142629689782, guid: e3fcb70249650174d8be4c0c60a13e6c, type: 3}
+    Prefab: {fileID: 6586016860735856017, guid: 225547706cd6ef44caa5d7227ac004e8, type: 3}
   - Identifier: Arrow Up
-    Prefab: {fileID: 3224550379201745855, guid: 3cb8ee41f68b32246b340ef338659d13, type: 3}
+    Prefab: {fileID: 4617577259751172298, guid: 66f5ca5ef8c340b4c8c81bddb0aaaa3b, type: 3}
   - Identifier: Arrow Down
-    Prefab: {fileID: 1602866636740471286, guid: 69509e3ef20a7e0428acfaceca8a9af8, type: 3}
+    Prefab: {fileID: 1733638419091748571, guid: 15f9214ca49071a43ab76089c9f0e6fe, type: 3}
   - Identifier: End Black
-    Prefab: {fileID: 7419093271164912916, guid: d287fd8b53df73046b13cfac4af08fd2, type: 3}
+    Prefab: {fileID: 4541763758880273575, guid: af69b8b8af3154746b0c2dc3fe534e4a, type: 3}
   - Identifier: End White
-    Prefab: {fileID: 5084925303880818225, guid: 5f4ee4a0d6bde0b49b7ca0df39a772eb, type: 3}
+    Prefab: {fileID: 3788245137598626088, guid: e19c6c94c8d94f042805b3f8f662ac27, type: 3}

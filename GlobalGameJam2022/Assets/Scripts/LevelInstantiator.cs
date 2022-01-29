@@ -96,7 +96,7 @@ public class LevelInstantiator : SingletonScriptableObject<LevelInstantiator>
                     {
                         Vector3 pos = startPos
                                       + new Vector3(widthOffset * y, -heightOffset*x, 0);
-                        Instantiate(rule.Prefab, pos, Quaternion.identity);
+                        Instantiate(rule.Prefab, pos, rule.Prefab.transform.rotation);
                     }
                 }
             }
