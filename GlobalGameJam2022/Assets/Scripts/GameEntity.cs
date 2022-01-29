@@ -12,6 +12,10 @@ public class GameEntity : MonoBehaviour
     [SerializeField]
     private bool _isResettable = false;
 
+    [SerializeField]
+    private bool _keepEntity = false;
+    public bool KeepEntity => _keepEntity;
+
     private Vector3 _initialPos;
 
     private IResettableCallback[] _resettables;

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,11 +18,24 @@ public class LevelManager : Singleton<LevelManager>
     private float timeToReset = 0.15f;
     private float resetTimer = 0;
 
+    [SerializeField]
+    private AvatarArrVar _finishedAvatars;
+
     public void Start()
     {
         LoadCurrentLevel();
     }
 
+    public void OnEnable()
+    {
+        _finishedAvatars.OnChange += CheckAvatarsFinished;
+    }
+
+    public void OnDisable()
+    {
+        _finishedAvatars.OnChange -= CheckAvatarsFinished;
+    }
+    
     public void Update()
     {
         if(Input.GetKey(KeyCode.R))
@@ -57,6 +69,7 @@ public class LevelManager : Singleton<LevelManager>
         int currentLevel = _selectedLevel.Value;
         if(currentLevel < _levels.Value.Length)
         {
+            _finishedAvatars.Clear();
             LevelInstantiator.Instance.InstantiateLevel(_levels.Value[_selectedLevel.Value]);    
         }
         else
@@ -84,6 +97,29 @@ public class LevelManager : Singleton<LevelManager>
         LoadCurrentLevel();
     }
 
+    public void CheckAvatarsFinished(AvatarController[] oldVal, AvatarController[] newVal)
+    {
+        if(newVal == null || newVal.Length < 2)
+        {
+            return;
+        }
 
+        for(int i = 0; i < newVal.Length; i++)
+        {
+            if(newVal == null)
+            {
+                return;
+            }
+        }
+
+        if(newVal.Length > 2)
+        {
+            UnityEngine.Debug.LogError("More than one avatar registered");
+        }
+        else if(newVal[0].isDark != newVal[1].isDark)
+        {
+            FinishLevel();
+        }
+    }
 
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5720553327499197919}
   - component: {fileID: 5720553327499197917}
   - component: {fileID: 5720553327499197918}
+  - component: {fileID: 1168936536897810579}
   m_Layer: 5
   m_Name: Board
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0d5fbe7e6a6d9e54fa033d7702238ead, type: 3}
   boardSquareSize: {x: 2, y: 1.3}
   moveKey: 32
-  switchKey: 13
+  switchKey: 9
   boardIndex: 0
 --- !u!212 &5720553327499197918
 SpriteRenderer:
@@ -102,3 +103,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1168936536897810579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5720553327499197913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc87d57a7ad83db43bb50e192f85a35e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isResettable: 1
+  _keepEntity: 1

@@ -16,7 +16,7 @@ MonoBehaviour:
   - '-'
   - '-'
   - '-'
-  - Start White
+  - Start White Right
   - '-'
   - '-'
   - '-'
@@ -27,17 +27,17 @@ MonoBehaviour:
   - '-'
   - '-'
   - '-'
-  - Arrow Right
-  - Arrow Up
+  - '-'
+  - '-'
   - '-'
   - '-'
   - '-'
   - '-'
   - '-'
   - End White
-  - Arrow Left
   - '-'
-  - Arrow Up
+  - '-'
+  - '-'
   - '-'
   - '-'
   - '-'
@@ -51,14 +51,14 @@ MonoBehaviour:
   - '-'
   - '-'
   - '-'
-  - Arrow Down
+  - '-'
   - '-'
   - Arrow Left
   - Arrow Left
   - '-'
   - '-'
   - '-'
-  - Start Black
+  - Start Black Left
   - '-'
   - '-'
   - '-'

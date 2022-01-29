@@ -1,12 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangingArrow : MonoBehaviour
+public class ChangingArrow : MonoBehaviour, IBoardListener
 {
     public Board board;
     public Vector2 newDirection;
-    public bool isDark = false;
+    [SerializeField]
+    private bool isDark = false;
+    public bool IsDark => isDark;
+
+    [SerializeField]
+    private SpriteRenderer _renderer;
+
+    [SerializeField]
+    private Sprite[] sprites;
 
     void Start() {
         board = FindObjectsOfType<Board>()[0];
@@ -20,12 +29,25 @@ public class ChangingArrow : MonoBehaviour
             newDirection = new Vector2(0, -board.boardSquareSize.y);
         }
 
-        isDark = ((transform.localPosition.x / board.boardSquareSize.x + transform.localPosition.y / board.boardSquareSize.y) % 2) == 0;
+        board.AddListener(this);
+        OnBoardChangeIndex(board.boardIndex);
     }
 
-    void Update() {
-        if(Input.GetKeyUp(board.switchKey)) {
-            isDark = !isDark;
-        }
+    private void SetIsDark(bool isDark)
+    {
+        this.isDark = isDark;
+        _renderer.sprite = sprites[isDark? 0  : 1];
+    }
+    
+    public void OnBoardChangeIndex(int boardIndex)
+    {
+        int index = (int)Mathf.Round(Mathf.Abs(transform.localPosition.x / board.boardSquareSize.x) + Mathf.Abs(transform.localPosition.y / board.boardSquareSize.y));
+        SetIsDark((index % 2) == boardIndex);
+    }
+
+    
+    private void OnDestroy()
+    {
+        board.RemoveListener(this);
     }
 }

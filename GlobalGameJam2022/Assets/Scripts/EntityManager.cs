@@ -8,14 +8,24 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
 
     public void PrepareGame()
     {
+        List<GameEntity> toDestroy = new List<GameEntity>();
+
         if(_entities.Count > 0)
         {
             foreach(GameEntity entity in _entities)
             {
-                Destroy(entity.gameObject);
+                if(!entity.KeepEntity)
+                {
+                    toDestroy.Add(entity);
+                }
             }
         }
-        _entities.Clear();
+
+        foreach(GameEntity entity in toDestroy)
+        {
+            _entities.Remove(entity);
+            Destroy(entity.gameObject);
+        }
     }
 
     public void RegisterEntity(GameEntity entity)

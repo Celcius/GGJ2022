@@ -13,7 +13,11 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     public bool finished = false;
     public bool isDark = false;
 
+    [SerializeField]
+    private AvatarArrVar _finishedAvatars;
+
     void Start() {
+        _finishedAvatars.Remove(this);
         board = FindObjectsOfType<Board>()[0];
         body = this.GetComponent<Rigidbody2D>();
     }
@@ -34,22 +38,24 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.GetComponent<ChangingArrow>() != null) {
             ChangingArrow changingArrow = other.gameObject.GetComponent<ChangingArrow>();
-            if(changingArrow.isDark == isDark) {
+            if(changingArrow.IsDark == isDark) {
                 arrow.transform.rotation = other.transform.rotation;
                 direction = changingArrow.newDirection;
             }
         } else if (other.gameObject.GetComponent<FinishLine>() != null) {
             FinishLine finishLine = other.gameObject.GetComponent<FinishLine>();
             if(finishLine.isDark == isDark) {
-                print("Collision!");
+                print("Collision! " + (isDark? "Dark" : "Light"));
                 finished = true;
-                LevelManager.Instance.FinishLevel();
+                _finishedAvatars.Add(this);
             }
         }
     }
 
     public void OnReset()
     {
+        _finishedAvatars.Remove(this);
+        finished = false;
         direction = startDirection;
         arrow.transform.rotation = Quaternion.Euler(0, Vector2.Angle(Vector2.right, direction),0);
     }
