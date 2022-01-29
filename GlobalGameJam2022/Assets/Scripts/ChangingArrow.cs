@@ -20,7 +20,7 @@ public class ChangingArrow : MonoBehaviour
             newDirection = new Vector2(0, -board.boardSquareSize.y);
         }
 
-        isDark = ((transform.localPosition.x / board.boardSquareSize.x + transform.localPosition.y / board.boardSquareSize.y) % 2) >= 1f;
+        isDark = ((transform.localPosition.x / board.boardSquareSize.x + transform.localPosition.y / board.boardSquareSize.y) % 2) == 0;
     }
 
     void Update() {
