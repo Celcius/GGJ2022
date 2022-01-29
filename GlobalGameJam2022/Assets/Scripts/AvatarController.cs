@@ -10,6 +10,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     public Board board;
     private Rigidbody2D body;
     private bool toMove = false;
+    public bool finished = false;
     public bool isDark = false;
 
     void Start() {
@@ -36,6 +37,12 @@ public class AvatarController : MonoBehaviour, IResettableCallback
             if(changingArrow.isDark == isDark) {
                 arrow.transform.rotation = other.transform.rotation;
                 direction = changingArrow.newDirection;
+            }
+        } else if (other.gameObject.GetComponent<FinishLine>() != null) {
+            FinishLine finishLine = other.gameObject.GetComponent<FinishLine>();
+            if(finishLine.isDark == isDark) {
+                LevelManager.Instance.FinishLevel();
+                finished = true;
             }
         }
     }
