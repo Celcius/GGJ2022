@@ -49,6 +49,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
 
     public void OnReset()
     {
-
+        direction = startDirection;
+        arrow.transform.rotation = Quaternion.Euler(0, Vector2.Angle(Vector2.right, direction),0);
     }
 }
