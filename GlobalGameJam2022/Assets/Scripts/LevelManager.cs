@@ -31,7 +31,7 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField]
     private TextMeshProUGUI _poemLabel;
 
-    public bool inputEnabled = true;
+    public bool inputEnabled = false;
 
     public void Start()
     {
@@ -57,7 +57,9 @@ public class LevelManager : Singleton<LevelManager>
             {
                 resetTimer = 0;
                 EntityManager.Instance.ResetLevel();
+                EnableInput();
             }
+
         }
         else
         {
@@ -85,9 +87,9 @@ public class LevelManager : Singleton<LevelManager>
             int index = _selectedLevel.Value;
             _poemController.SetTrigger("Enter");
             _poemLabel.text = _poems.Lines[index];
+            DisableInput();
 
-
-            StartCoroutine(LoadLevelRoutine(index));            
+            StartCoroutine(LoadLevelRoutine(index));
         }
         else
         {
@@ -95,10 +97,22 @@ public class LevelManager : Singleton<LevelManager>
         }
     }
 
+    public void EnableInput()
+    {
+        inputEnabled = true;
+    }
+
+    public void DisableInput()
+    {
+        inputEnabled = false;
+    }
+
     private IEnumerator LoadLevelRoutine(int index)
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         LevelInstantiator.Instance.InstantiateLevel(_levels.Value[index]);
+        yield return new WaitForSeconds(1.0f);
+        EnableInput();
     }
 
     public void FinishLevel()
