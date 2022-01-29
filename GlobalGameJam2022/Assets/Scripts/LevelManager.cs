@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AmoaebaUtils;
+using TMPro;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -20,6 +21,15 @@ public class LevelManager : Singleton<LevelManager>
 
     [SerializeField]
     private AvatarArrVar _finishedAvatars;
+
+    [SerializeField]
+    private Animator _poemController;
+
+    [SerializeField]
+    private PoemLines _poems;
+
+    [SerializeField]
+    private TextMeshProUGUI _poemLabel;
 
     public void Start()
     {
@@ -70,12 +80,23 @@ public class LevelManager : Singleton<LevelManager>
         if(currentLevel < _levels.Value.Length)
         {
             _finishedAvatars.Clear();
-            LevelInstantiator.Instance.InstantiateLevel(_levels.Value[_selectedLevel.Value]);    
+            int index = _selectedLevel.Value;
+            _poemController.SetTrigger("Enter");
+            _poemLabel.text = _poems.Lines[index];
+
+
+            StartCoroutine(LoadLevelRoutine(index));            
         }
         else
         {
             UnityEngine.Debug.Log("End of game");
         }
+    }
+
+    private IEnumerator LoadLevelRoutine(int index)
+    {
+        yield return new WaitForSeconds(1.0f);
+        LevelInstantiator.Instance.InstantiateLevel(_levels.Value[index]);
     }
 
     public void FinishLevel()
