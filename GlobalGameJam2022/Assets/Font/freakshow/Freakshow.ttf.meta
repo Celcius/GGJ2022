@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: d7a63fd2bb2e5f543b988bdc7c9c4b7f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Freakshow
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b0413b8517564f940bb4bca0b210c495, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

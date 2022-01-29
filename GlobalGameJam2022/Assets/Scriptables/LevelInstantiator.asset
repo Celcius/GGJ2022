@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: LevelInstantiator
   m_EditorClassIdentifier: 
   _gridDefinition:
-    StartPosition: {x: 0, y: 0, z: 0}
-    WidthOffset: 10
-    HeightOffset: 10
+    GridSize: {x: 2, y: 1.3}
   _rules:
   - Identifier: Start Black
     Prefab: {fileID: 6378110431973610832, guid: 2bb48deddc0a2004da23b6c7c8cdcc20, type: 3}

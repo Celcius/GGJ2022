@@ -10,15 +10,13 @@ public class LevelInstantiator : SingletonScriptableObject<LevelInstantiator>
     [System.Serializable]
     public struct GridDefinition
     {
-        public Vector3 StartPosition;
-
-        public float WidthOffset;
-
-        public float HeightOffset;
+        public Vector2 GridSize;
     }
 
     [SerializeField]
     private GridDefinition _gridDefinition;
+
+    public Vector2 GridSize => _gridDefinition.GridSize;
     
     [System.Serializable]
     public struct InstantiatorRule
@@ -34,13 +32,11 @@ public class LevelInstantiator : SingletonScriptableObject<LevelInstantiator>
     private string[] _ruleIdentifiers;
     private Dictionary<string, int> _identifierIndexes = new Dictionary<string, int>();
 
-#if UNITY_EDITOR
-
     public void OnValidate()
     {
         LoadRules();
     }
-#endif
+
     public void OnAwake()
     {
         LoadRules();
@@ -77,8 +73,17 @@ public class LevelInstantiator : SingletonScriptableObject<LevelInstantiator>
         return _identifierIndexes.ContainsKey(identifier) ? _identifierIndexes[identifier] : 0;
     }
 
-    public void Instantiate(LevelDefinition level)
+    public void InstantiateLevel(LevelDefinition level)
     {
+        EntityManager.Instance.PrepareGame();
+
+        float widthOffset = _gridDefinition.GridSize.x;
+        float heightOffset = _gridDefinition.GridSize.y;
+        
+        Vector3 startPos = new Vector3(-level.MapWidth * widthOffset/2.0f + widthOffset/2.0f,
+                                       level.MapHeight * heightOffset/2.0f - heightOffset/2.0f, 
+                                      0);
+
         for(int x = 0; x < level.MapWidth; x++)
         {
             for(int y = 0; y < level.MapWidth; y++)
@@ -89,8 +94,8 @@ public class LevelInstantiator : SingletonScriptableObject<LevelInstantiator>
                     InstantiatorRule rule = _rulesDict[identifier];
                     if(rule.Prefab != null)
                     {
-                        Vector3 pos = _gridDefinition.StartPosition 
-                                      + new Vector3(_gridDefinition.WidthOffset * x, _gridDefinition.HeightOffset*y, 0);
+                        Vector3 pos = startPos
+                                      + new Vector3(widthOffset * y, -heightOffset*x, 0);
                         Instantiate(rule.Prefab, pos, Quaternion.identity);
                     }
                 }
