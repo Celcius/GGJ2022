@@ -785,6 +785,7 @@ MonoBehaviour:
   _levels: {fileID: 11400000, guid: bba80e3acdeb0de43ac9344242228934, type: 2}
   timeToReset: 0.15
   _finishedAvatars: {fileID: 11400000, guid: b7753dd9237ab5942a055a6c1994a44f, type: 2}
+  inputEnabled: 1
 --- !u!4 &1049394918
 Transform:
   m_ObjectHideFlags: 0

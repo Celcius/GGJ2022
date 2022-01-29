@@ -21,6 +21,8 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField]
     private AvatarArrVar _finishedAvatars;
 
+    public bool inputEnabled = true;
+
     public void Start()
     {
         LoadCurrentLevel();
