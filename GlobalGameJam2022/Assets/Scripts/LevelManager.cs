@@ -10,6 +10,9 @@ public class LevelManager : Singleton<LevelManager>
     private IntVar _selectedLevel;
 
     [SerializeField]
+    private IntVar _unlockedLevels;
+
+    [SerializeField]
     private LevelDefinitionRegistry _levels;
 
     [SerializeField]
@@ -60,7 +63,13 @@ public class LevelManager : Singleton<LevelManager>
         {
             UnityEngine.Debug.Log("End of game");
         }
-        
+    }
+
+    public void FinishLevel()
+    {
+        NextLevel();
+        _unlockedLevels.Value = Mathf.Max(_unlockedLevels.Value, 
+                                          _selectedLevel.Value);
     }
 
     public void PreviousLevel()
