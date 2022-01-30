@@ -8,6 +8,8 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
     
     public  AvatarController _darkAvatar;
     public  AvatarController _lightAvatar;
+    private List<AvatarController> avatars = new List<AvatarController>();
+    private List<SwitchingArrow> switchingArrows = new List<SwitchingArrow>();
 
     public void PrepareGame()
     {
@@ -39,6 +41,38 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
         }
     }
 
+    public void RegisterAvatar(AvatarController avatar)
+    {
+        if(!avatars.Contains(avatar))
+        {
+            avatars.Add(avatar);
+        }
+    }
+
+    public void RegisterSwitchingArrow(SwitchingArrow arrow)
+    {
+        if(!switchingArrows.Contains(arrow))
+        {
+            switchingArrows.Add(arrow);
+        }
+    }
+
+    public void UnregisterSwitchingArrow(SwitchingArrow arrow)
+    {
+        if(switchingArrows.Contains(arrow))
+        {
+            switchingArrows.Remove(arrow);
+        }
+    }
+
+    public void UnregisterAvatar(AvatarController avatar)
+    {
+        if(avatars.Contains(avatar))
+        {
+            avatars.Remove(avatar);
+        }
+    }
+
     public void UnregisterEntity(GameEntity entity)
     {
         if(_entities.Contains(entity))
@@ -53,6 +87,22 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
         foreach(GameEntity entity in _entities)
         {
             entity.Reset();
+        }
+    }
+
+    public AvatarController getOtherAvatar(AvatarController mainAvatar) {
+        if(avatars.Contains(mainAvatar) && avatars.Count == 2) {
+            return avatars[1 - avatars.IndexOf(mainAvatar)];
+        } else {
+            return null;
+        }
+    }
+
+    public void enableAllArrows() {
+        foreach(SwitchingArrow arrow in switchingArrows) {
+            if(arrow.GetComponent<BoxCollider2D>().isTrigger) {
+                arrow.enable();
+            }
         }
     }
 }

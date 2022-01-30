@@ -33,6 +33,15 @@ public class AvatarController : MonoBehaviour, IResettableCallback
         [SerializeField]
     private AvatarArrVar _registeredAvatars;
 
+    void Awake() {
+        EntityManager.Instance.RegisterAvatar(this);
+    }
+
+    void OnDestroy() {
+        EntityManager.Instance.UnregisterAvatar(this);
+        _registeredAvatars.Remove(this);
+    }
+
     void Start() {
         _registeredAvatars.Add(this);
         _finishedAvatars.Remove(this);
@@ -46,22 +55,19 @@ public class AvatarController : MonoBehaviour, IResettableCallback
         }
     }
 
-    private void OnDestroy()
-    {
-        _registeredAvatars.Remove(this);
-    }
-
     void FixedUpdate() {
         if(toMove) {
             body.MovePosition(transform.position + new Vector3(direction.x, direction.y));
             toMove = false;
             SoundSystem.Instance.PlaySound(_stepSounds[isDark? 0 : 1]);
             LevelManager.Instance.HasMoved = true;
+            EntityManager.Instance.enableAllArrows();
         }
     }
 
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.GetComponent<ChangingArrow>() != null) {
+            board.canSwitch = false;
             ChangingArrow changingArrow = other.gameObject.GetComponent<ChangingArrow>();
             if(changingArrow.IsDark == isDark) {
                 arrow.transform.rotation = other.transform.rotation;
@@ -72,6 +78,15 @@ public class AvatarController : MonoBehaviour, IResettableCallback
                     SoundSystem.Instance.PlaySound(_turnSound, "Turn"+ (isDark?"Dark" :"Light"));
                 }
             }
+            board.canSwitch = true;
+        } else if (other.gameObject.GetComponent<SwitchingArrow>() != null) {
+            AvatarController otherAvatar = EntityManager.Instance.getOtherAvatar(this);
+            other.gameObject.GetComponent<SwitchingArrow>().disable();
+            otherAvatar.GetComponent<BoxCollider2D>().isTrigger = true;
+            Vector3 newPos = otherAvatar.transform.position;
+            otherAvatar.transform.position = transform.position;
+            transform.position = newPos;
+            otherAvatar.GetComponent<BoxCollider2D>().isTrigger = false;
         } else if (other.gameObject.GetComponent<FinishLine>() != null) {
             FinishLine finishLine = other.gameObject.GetComponent<FinishLine>();
             if(finishLine.isDark == isDark) {
