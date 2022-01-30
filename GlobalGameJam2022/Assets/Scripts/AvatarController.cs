@@ -30,7 +30,11 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     [SerializeField]
     private AvatarArrVar _finishedAvatars;
 
+        [SerializeField]
+    private AvatarArrVar _registeredAvatars;
+
     void Start() {
+        _registeredAvatars.Add(this);
         _finishedAvatars.Remove(this);
         board = FindObjectsOfType<Board>()[0];
         body = this.GetComponent<Rigidbody2D>();
@@ -40,6 +44,11 @@ public class AvatarController : MonoBehaviour, IResettableCallback
         if(Input.GetKeyUp(board.moveKey) && !finished && LevelManager.Instance.inputEnabled) {
             toMove = true;
         }
+    }
+
+    private void OnDestroy()
+    {
+        _registeredAvatars.Remove(this);
     }
 
     void FixedUpdate() {
@@ -72,14 +81,22 @@ public class AvatarController : MonoBehaviour, IResettableCallback
 
                 SoundSystem.Instance.PlaySound(_finishLineSound, "Finish");
             }
-        } else if (other.gameObject.GetComponent<Board>() != null) {
+        } else if (other.gameObject.GetComponent<Board>() != null) 
+        {
             StartCoroutine(gameOver());
-        } else if (other.gameObject.GetComponent<AvatarController>() != null) {
-            StartCoroutine(gameOver());
-            if(!SoundSystem.Instance.IsPlaying("Collision"))
+            if(SoundSystem.Instance.IsPlaying("Collision"))
             {
-                SoundSystem.Instance.PlaySound(_collisionSound, "Collision");
+                SoundSystem.Instance.StopSound("Collision");
             }
+            SoundSystem.Instance.PlaySound(_collisionSound, "Collision");
+        } 
+        else if (other.gameObject.GetComponent<AvatarController>() != null) {
+            StartCoroutine(gameOver());
+            if(SoundSystem.Instance.IsPlaying("Collision"))
+            {
+                SoundSystem.Instance.StopSound("Collision");
+            }
+            SoundSystem.Instance.PlaySound(_collisionSound, "Collision");
         }
     }
 

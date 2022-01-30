@@ -22,6 +22,9 @@ public class LevelManager : Singleton<LevelManager>
     public bool HasMoved = false;
     
     [SerializeField]
+    private AvatarArrVar _availableAvatars;
+
+    [SerializeField]
     private AvatarArrVar _finishedAvatars;
 
     [SerializeField]
@@ -41,6 +44,8 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField]
     private AudioClip _finishSound;
 
+    [SerializeField]
+    private Board _board;
     public void Start()
     {
         LoadCurrentLevel();
@@ -125,6 +130,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         yield return new WaitForSeconds(2.0f);
         LevelInstantiator.Instance.InstantiateLevel(_levels.Value[index]);
+        _board.SetBoardIndex(0);
         yield return new WaitForSeconds(1.0f);
         EnableInput();
     }
@@ -151,7 +157,10 @@ public class LevelManager : Singleton<LevelManager>
 
     public void CheckAvatarsFinished(AvatarController[] oldVal, AvatarController[] newVal)
     {
-        if(newVal == null || newVal.Length < 2)
+        if(newVal == null 
+           || _availableAvatars == null 
+           || newVal.Length <= 0 
+           || newVal.Length != _availableAvatars.Value.Length)
         {
             return;
         }
@@ -168,7 +177,7 @@ public class LevelManager : Singleton<LevelManager>
         {
             UnityEngine.Debug.LogError("More than one avatar registered");
         }
-        else if(newVal[0].isDark != newVal[1].isDark)
+        else if(newVal.Length == 1 || (newVal[0].isDark != newVal[1].isDark))
         {
             FinishLevel();
         }

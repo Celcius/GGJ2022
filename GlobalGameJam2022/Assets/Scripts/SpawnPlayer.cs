@@ -48,7 +48,7 @@ public class SpawnPlayer : MonoBehaviour
                 direction.y = -direction.y;
                 break;
         }
-        Transform instance = Instantiate(_playerPrefab, transform.position, Quaternion.Euler(0,rotation,0));
+        Transform instance = Instantiate(_playerPrefab, transform.position, Quaternion.identity);
         AvatarController controller = instance.GetComponent<AvatarController>();
         controller.startDirection = direction;
         controller.OnReset();

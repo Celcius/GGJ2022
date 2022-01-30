@@ -15,24 +15,6 @@ MonoBehaviour:
   _flattenedMap:
   - '-'
   - '-'
-  - '-'
-  - Start White Right
-  - '-'
-  - '-'
-  - '-'
-  - '-'
-  - '-'
-  - '-'
-  - Arrow Down
-  - Arrow Right
-  - '-'
-  - '-'
-  - '-'
-  - Start Black Down
-  - '-'
-  - '-'
-  - '-'
-  - '-'
   - End Black
   - '-'
   - '-'
@@ -51,14 +33,32 @@ MonoBehaviour:
   - '-'
   - '-'
   - '-'
-  - Arrow Right
-  - Arrow Up
+  - '-'
+  - '-'
+  - '-'
+  - Arrow Left
+  - '-'
+  - '-'
+  - '-'
+  - Start Black Up
   - '-'
   - '-'
   - '-'
   - '-'
   - '-'
-  - End White
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
   - '-'
   - '-'
   - '-'

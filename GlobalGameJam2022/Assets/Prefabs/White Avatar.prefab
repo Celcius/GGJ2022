@@ -256,6 +256,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 42f56ef36ec27964dae11017acafc725, type: 3}
   - {fileID: 8300000, guid: 5c46da09d45b7ba438ef21c0b466998e, type: 3}
   _finishedAvatars: {fileID: 11400000, guid: b7753dd9237ab5942a055a6c1994a44f, type: 2}
+  _registeredAvatars: {fileID: 11400000, guid: b271148d8c992324fb594db812357b14, type: 2}
 --- !u!50 &7404962541086130498
 Rigidbody2D:
   serializedVersion: 4

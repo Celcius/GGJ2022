@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,15 +33,20 @@ public class Board : MonoBehaviour, IResettableCallback
     {
         if(Input.GetKeyDown(switchKey) && LevelManager.Instance.inputEnabled) 
         {
-            if(boardIndex == 1) {
-                _renderer.sprite = boards[0];
-            } else {
-                _renderer.sprite = boards[1];
-            }
-            boardIndex = 1 - boardIndex;
+            SetBoardIndex(1-boardIndex);    
+        }
+    }
+
+    public void SetBoardIndex(int index, bool startLevel = false)
+    {
+        boardIndex = index;
+        _renderer.sprite = boards[boardIndex];
+        if(!startLevel)
+        {
             BroadCastBoardChange();
             SoundSystem.Instance.PlaySound(boardAudios[boardIndex]);
         }
+        
     }
 
     public void OnReset()

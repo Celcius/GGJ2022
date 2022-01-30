@@ -49,6 +49,8 @@ MonoBehaviour:
   _unlockedLevels: {fileID: 11400000, guid: 1c5f53e89546fe444bd6320992e717fb, type: 2}
   _levels: {fileID: 11400000, guid: bba80e3acdeb0de43ac9344242228934, type: 2}
   timeToReset: 0.15
+  HasMoved: 0
+  _availableAvatars: {fileID: 11400000, guid: b271148d8c992324fb594db812357b14, type: 2}
   _finishedAvatars: {fileID: 11400000, guid: b7753dd9237ab5942a055a6c1994a44f, type: 2}
   _poemController: {fileID: 0}
   _poems: {fileID: 11400000, guid: 806bbf284e7c4894b997c3cdfa8bfe45, type: 2}
@@ -56,6 +58,7 @@ MonoBehaviour:
   inputEnabled: 0
   _restartSound: {fileID: 8300000, guid: 51dd6e0d0f39ecf4b8dd77756d46698b, type: 3}
   _finishSound: {fileID: 8300000, guid: 699af8ede04752d42b6fd0e77b91771c, type: 3}
+  _board: {fileID: 0}
 --- !u!82 &2394164394927310684
 AudioSource:
   m_ObjectHideFlags: 0
