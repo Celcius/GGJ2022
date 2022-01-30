@@ -504,6 +504,7 @@ MonoBehaviour:
   board: {fileID: 0}
   finished: 0
   isDark: 0
+  spriteRenderer: {fileID: 7404962540639977888}
   _collisionSound: {fileID: 8300000, guid: d17951bc4a05a3a45af619d2f478935d, type: 3}
   _turnSound: {fileID: 8300000, guid: dd4956f2f09544f45aee9bbf37aaf450, type: 3}
   _finishLineSound: {fileID: 8300000, guid: 87e991129ec20f34dbb4bfb726c82c97, type: 3}

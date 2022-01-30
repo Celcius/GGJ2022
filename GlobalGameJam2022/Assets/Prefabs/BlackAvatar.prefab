@@ -96,6 +96,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7404962541086130497, guid: cbf7504205c78e34b9e61e112e8cfee4, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 6949789224901114810}
+    - target: {fileID: 7404962541086130497, guid: cbf7504205c78e34b9e61e112e8cfee4, type: 3}
       propertyPath: arrows.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -165,6 +169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbf7504205c78e34b9e61e112e8cfee4, type: 3}
+--- !u!212 &6949789224901114810 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7404962540639977888, guid: cbf7504205c78e34b9e61e112e8cfee4, type: 3}
+  m_PrefabInstance: {fileID: 482213127857568282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6949789224697688048 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7404962540843406826, guid: cbf7504205c78e34b9e61e112e8cfee4, type: 3}

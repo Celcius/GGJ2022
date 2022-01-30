@@ -15,6 +15,9 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     private bool toMove = false;
     public bool finished = false;
     public bool isDark = false;
+    
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
 
     [SerializeField]
     private AudioClip _collisionSound;
@@ -55,6 +58,16 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     void Update() {
         if(Input.GetKeyUp(board.moveKey) && !finished && LevelManager.Instance.inputEnabled) {
             toMove = true;
+        }
+        
+        Color originalColour = spriteRenderer.color;
+
+        if((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))) {
+            if(LevelManager.Instance.inputEnabled) {
+                spriteRenderer.color = new Color(originalColour.r, originalColour.g, originalColour.b, 0.35f);
+            }
+        } else {
+                spriteRenderer.color = new Color(originalColour.r, originalColour.g, originalColour.b, 1.0f);
         }
     }
 
