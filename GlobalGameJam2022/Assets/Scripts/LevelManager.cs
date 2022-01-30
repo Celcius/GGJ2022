@@ -127,7 +127,7 @@ public class LevelManager : Singleton<LevelManager>
         }
         else
         {
-            UnityEngine.Debug.Log("End of game");
+            SceneManager.LoadScene("EndScene");
         }
     }
 

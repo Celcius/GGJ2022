@@ -91,6 +91,8 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
         {
             entity.Reset();
         }
+        allowSwitching = true;
+        EntityManager.Instance.enableAllArrows();
     }
 
     public AvatarController getOtherAvatar(AvatarController mainAvatar) {

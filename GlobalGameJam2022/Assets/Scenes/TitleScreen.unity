@@ -592,8 +592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -455.5}
-  m_SizeDelta: {x: 1770, y: 135}
+  m_AnchoredPosition: {x: 960, y: -472.5}
+  m_SizeDelta: {x: 1770, y: 169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559059954
 MonoBehaviour:
@@ -636,7 +636,9 @@ MonoBehaviour:
     Mubinul Haque - Gameplay Coder
 
     Harvey Carman - Sound
-    and Audio Design'
+    and Audio Design
+
+'
 --- !u!222 &559059955
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1116,8 +1118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -675.5}
-  m_SizeDelta: {x: 1770, y: 169}
+  m_AnchoredPosition: {x: 960, y: -696.5}
+  m_SizeDelta: {x: 1770, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923116912
 MonoBehaviour:
@@ -1154,7 +1156,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Freakshow Font by Sharkshock (\rdennis@sharkshock.net)\nAudrey Font by
     Cristina Pagnotta (info@cristinapagnotta.it)\nHigh Heels L-R.wav by BenBoncan
-    @ freesound.org\n\nControllerKeyPrompts by Nicolae (Xelu) Berbece"
+    @ freesound.org\nControllerKeyPrompts by Nicolae (Xelu) Berbece"
 --- !u!222 &923116913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1197,8 +1199,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -557}
-  m_SizeDelta: {x: 1770, y: 68}
+  m_AnchoredPosition: {x: 960, y: -593}
+  m_SizeDelta: {x: 1770, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954864982
 MonoBehaviour:
@@ -1641,8 +1643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -354}
-  m_SizeDelta: {x: 1770, y: 68}
+  m_AnchoredPosition: {x: 960, y: -352}
+  m_SizeDelta: {x: 1770, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737318156
 MonoBehaviour:

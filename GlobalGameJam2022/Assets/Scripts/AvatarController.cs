@@ -144,6 +144,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
         finished = false;
         direction = startDirection;
         changeRotation(startRotation);
+        EntityManager.Instance.enableAllArrows();
     }
 
     public void changeRotation(int newRotation) {
