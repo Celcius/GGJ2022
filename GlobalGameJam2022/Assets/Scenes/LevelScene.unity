@@ -521,6 +521,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1388716496}
     - target: {fileID: 2394164394927310686, guid: d839f692c7b807b478be1b7f611bc1a7, type: 3}
+      propertyPath: _selectedLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 2894cc939d453d7468142f1a3ff5faf8, type: 2}
+    - target: {fileID: 2394164394927310686, guid: d839f692c7b807b478be1b7f611bc1a7, type: 3}
       propertyPath: _poemController
       value: 
       objectReference: {fileID: 598964433}
