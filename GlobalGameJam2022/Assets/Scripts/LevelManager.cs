@@ -20,6 +20,9 @@ public class LevelManager : Singleton<LevelManager>
     private float resetTimer = 0;
 
     public bool HasMoved = false;
+
+    [SerializeField]
+    private KeyCode exitKey = UnityEngine.KeyCode.Escape;
     
     [SerializeField]
     private AvatarArrVar _availableAvatars;
@@ -94,6 +97,11 @@ public class LevelManager : Singleton<LevelManager>
         if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.RightArrow))
         {
             NextLevel();
+        }
+
+        if(Input.GetKeyUp(exitKey)) {
+            Application.Quit();
+            UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 
