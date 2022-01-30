@@ -7,13 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2871741618896317232, guid: 0b862028f7fee7a499a6e358d799f0ae, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e8953e9a6d800334d87ec63374c0d26a, type: 3}
     - target: {fileID: 6354796596701722788, guid: 0b862028f7fee7a499a6e358d799f0ae, type: 3}
       propertyPath: _playerPrefab
       value: 
       objectReference: {fileID: 7404962541086130556, guid: cbf7504205c78e34b9e61e112e8cfee4, type: 3}
     - target: {fileID: 8934348348154329811, guid: 0b862028f7fee7a499a6e358d799f0ae, type: 3}
       propertyPath: m_Name
-      value: White Start Line
+      value: White Start Line Right
       objectReference: {fileID: 0}
     - target: {fileID: 8934348348154329820, guid: 0b862028f7fee7a499a6e358d799f0ae, type: 3}
       propertyPath: m_Pivot.x
