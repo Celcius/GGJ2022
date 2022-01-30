@@ -51,7 +51,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.45, y: 0.62}
+    oldSize: {x: 2, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -75,6 +75,7 @@ MonoBehaviour:
   board: {fileID: 0}
   newDirection: {x: 0, y: 0}
   isDark: 0
+  rotation: 3
   _renderer: {fileID: 1733638419091748570}
   sprites:
   - {fileID: 21300000, guid: adf809291332fbf47bda602f8be1537c, type: 3}

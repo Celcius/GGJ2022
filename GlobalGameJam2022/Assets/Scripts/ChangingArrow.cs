@@ -10,6 +10,7 @@ public class ChangingArrow : MonoBehaviour, IBoardListener
     [SerializeField]
     private bool isDark = false;
     public bool IsDark => isDark;
+    public int rotation = 0;
 
     [SerializeField]
     private SpriteRenderer _renderer;
