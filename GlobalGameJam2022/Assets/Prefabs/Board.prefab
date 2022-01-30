@@ -50,12 +50,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boards:
-  - {fileID: 21300000, guid: 0d5fbe7e6a6d9e54fa033d7702238ead, type: 3}
-  - {fileID: 21300000, guid: d250702e0faa89349bbdbaa58d0c2f73, type: 3}
+  - {fileID: 21300000, guid: 5492fa02f01f04b4d894a7403775bde1, type: 3}
+  - {fileID: 21300000, guid: c98a0304ea717ef4f9bcf6beb394e294, type: 3}
   boardSquareSize: {x: 2, y: 1.3}
   moveKey: 32
   switchKey: 9
   boardIndex: 0
+  boardAudios: []
 --- !u!212 &5720553327499197918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d5fbe7e6a6d9e54fa033d7702238ead, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5492fa02f01f04b4d894a7403775bde1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

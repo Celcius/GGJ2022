@@ -590,7 +590,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Freakshow Font by Sharkshock \rdennis@sharkshock.net\nCatherine Font by
-    murisa.studio@gmail.com\r\nHigh Heels L-R.wav by BenBoncan @ freesound.org"
+    murisa.studio@gmail.com\r\nHigh Heels L-R.wav by BenBoncan @ freesound.org\n\nControllerKeyPrompts
+    by Nicolae (Xelu) Berbece"
 --- !u!222 &923116913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -843,7 +844,7 @@ RectTransform:
   - {fileID: 954864981}
   - {fileID: 923116911}
   m_Father: {fileID: 1386827058}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -898,10 +899,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -943,8 +944,8 @@ RectTransform:
   m_Children:
   - {fileID: 1752645473}
   - {fileID: 1895308278}
-  - {fileID: 2041722034}
   - {fileID: 1317360872}
+  - {fileID: 2041722034}
   - {fileID: 2084773668}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1090,7 +1091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dISSONANT CHLOe
+  m_text: CHLOe & Conflict
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 024343d6d785fc149910052d36ac1a9a, type: 2}
   m_sharedMaterial: {fileID: 4955910375115041536, guid: 024343d6d785fc149910052d36ac1a9a, type: 2}
@@ -1287,7 +1288,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1386827058}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
