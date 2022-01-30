@@ -43,3 +43,5 @@ MonoBehaviour:
     Prefab: {fileID: 4541763758880273575, guid: af69b8b8af3154746b0c2dc3fe534e4a, type: 3}
   - Identifier: End White
     Prefab: {fileID: 3788245137598626088, guid: e19c6c94c8d94f042805b3f8f662ac27, type: 3}
+  - Identifier: SwitchingArrow
+    Prefab: {fileID: 9049759878742351071, guid: 86dd43352fe7c294293b21a1cdc50127, type: 3}

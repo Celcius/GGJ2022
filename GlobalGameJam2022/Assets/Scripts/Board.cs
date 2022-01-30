@@ -15,6 +15,7 @@ public class Board : MonoBehaviour, IResettableCallback
     public KeyCode moveKey = KeyCode.Space;
     public KeyCode switchKey = KeyCode.Return;
     public int boardIndex = 0;
+    public bool canSwitch = true;
 
     [SerializeField]
     private AudioClip[] boardAudios;
@@ -30,7 +31,7 @@ public class Board : MonoBehaviour, IResettableCallback
 
     void Update() 
     {
-        if(Input.GetKeyDown(switchKey) && LevelManager.Instance.inputEnabled) 
+        if(Input.GetKeyDown(switchKey) && LevelManager.Instance.inputEnabled && canSwitch) 
         {
             if(boardIndex == 1) {
                 _renderer.sprite = boards[0];

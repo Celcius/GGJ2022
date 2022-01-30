@@ -30,6 +30,14 @@ public class AvatarController : MonoBehaviour, IResettableCallback
     [SerializeField]
     private AvatarArrVar _finishedAvatars;
 
+    void Awake() {
+        EntityManager.Instance.RegisterAvatar(this);
+    }
+
+    void OnDestroy() {
+        EntityManager.Instance.UnregisterAvatar(this);
+    }
+
     void Start() {
         _finishedAvatars.Remove(this);
         board = FindObjectsOfType<Board>()[0];
@@ -53,6 +61,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
 
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.GetComponent<ChangingArrow>() != null) {
+            board.canSwitch = false;
             ChangingArrow changingArrow = other.gameObject.GetComponent<ChangingArrow>();
             if(changingArrow.IsDark == isDark) {
                 arrow.transform.rotation = other.transform.rotation;
@@ -63,6 +72,13 @@ public class AvatarController : MonoBehaviour, IResettableCallback
                     SoundSystem.Instance.PlaySound(_turnSound, "Turn"+ (isDark?"Dark" :"Light"));
                 }
             }
+            board.canSwitch = true;
+        } else if (other.gameObject.GetComponent<SwitchingArrow>() != null) {
+            AvatarController otherAvatar = EntityManager.Instance.getOtherAvatar(this);
+            otherAvatar.GetComponent<BoxCollider2D>().isTrigger = true;
+            Vector3 newPos = otherAvatar.transform.position;
+            otherAvatar.transform.position = transform.position;
+            transform.position = newPos;
         } else if (other.gameObject.GetComponent<FinishLine>() != null) {
             FinishLine finishLine = other.gameObject.GetComponent<FinishLine>();
             if(finishLine.isDark == isDark) {
