@@ -56,6 +56,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
             toMove = false;
             SoundSystem.Instance.PlaySound(_stepSounds[isDark? 0 : 1]);
             LevelManager.Instance.HasMoved = true;
+            EntityManager.Instance.enableAllArrows();
         }
     }
 
@@ -75,10 +76,12 @@ public class AvatarController : MonoBehaviour, IResettableCallback
             board.canSwitch = true;
         } else if (other.gameObject.GetComponent<SwitchingArrow>() != null) {
             AvatarController otherAvatar = EntityManager.Instance.getOtherAvatar(this);
+            other.gameObject.GetComponent<SwitchingArrow>().disable();
             otherAvatar.GetComponent<BoxCollider2D>().isTrigger = true;
             Vector3 newPos = otherAvatar.transform.position;
             otherAvatar.transform.position = transform.position;
             transform.position = newPos;
+            otherAvatar.GetComponent<BoxCollider2D>().isTrigger = false;
         } else if (other.gameObject.GetComponent<FinishLine>() != null) {
             FinishLine finishLine = other.gameObject.GetComponent<FinishLine>();
             if(finishLine.isDark == isDark) {

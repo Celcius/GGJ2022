@@ -97,4 +97,12 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
             return null;
         }
     }
+
+    public void enableAllArrows() {
+        foreach(SwitchingArrow arrow in switchingArrows) {
+            if(arrow.GetComponent<BoxCollider2D>().isTrigger) {
+                arrow.enable();
+            }
+        }
+    }
 }

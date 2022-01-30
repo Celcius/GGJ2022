@@ -11,7 +11,6 @@ public class SwitchingArrow : MonoBehaviour
         EntityManager.Instance.RegisterSwitchingArrow(this);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -19,5 +18,13 @@ public class SwitchingArrow : MonoBehaviour
 
     void OnDestroy() {
         EntityManager.Instance.UnregisterSwitchingArrow(this);
+    }
+
+    public void disable() {
+        this.GetComponent<BoxCollider2D>().isTrigger = true;
+    }
+
+    public void enable() {
+        this.GetComponent<BoxCollider2D>().isTrigger = false;
     }
 }
