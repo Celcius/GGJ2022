@@ -1004,9 +1004,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Freakshow Font by Sharkshock \rdennis@sharkshock.net\nCatherine Font by
-    murisa.studio@gmail.com\r\nHigh Heels L-R.wav by BenBoncan @ freesound.org\n\nControllerKeyPrompts
-    by Nicolae (Xelu) Berbece"
+  m_Text: "Freakshow Font by Sharkshock (\rdennis@sharkshock.net)\nAudrey Font by
+    Cristina Pagnotta (info@cristinapagnotta.it)\nHigh Heels L-R.wav by BenBoncan
+    @ freesound.org\n\nControllerKeyPrompts by Nicolae (Xelu) Berbece"
 --- !u!222 &923116913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c3dcb499462c1274da441e75027a7588, type: 3}
+    m_Font: {fileID: 12800000, guid: deeaa1fda34249b4d83e705ff7910f14, type: 3}
     m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
@@ -1516,7 +1516,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c3dcb499462c1274da441e75027a7588, type: 3}
+    m_Font: {fileID: 12800000, guid: deeaa1fda34249b4d83e705ff7910f14, type: 3}
     m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0

@@ -7,7 +7,9 @@ public class AvatarController : MonoBehaviour, IResettableCallback
 {
     public Vector2 startDirection;
     public Vector2 direction = new Vector2(200f, 0f);
-    public GameObject arrow;
+    public int startRotation;
+    public int rotation;
+    public List<GameObject> arrows;
     public Board board;
     private Rigidbody2D body;
     private bool toMove = false;
@@ -47,6 +49,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
         _finishedAvatars.Remove(this);
         board = FindObjectsOfType<Board>()[0];
         body = this.GetComponent<Rigidbody2D>();
+        changeRotation(startRotation);
     }
 
     void Update() {
@@ -70,7 +73,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
             board.canSwitch = false;
             ChangingArrow changingArrow = other.gameObject.GetComponent<ChangingArrow>();
             if(changingArrow.IsDark == isDark) {
-                arrow.transform.rotation = other.transform.rotation;
+                changeRotation(changingArrow.rotation);
                 direction = changingArrow.newDirection;
 
                 if(!SoundSystem.Instance.IsPlaying("Turn" + (isDark?"Dark" :"Light")))
@@ -126,6 +129,14 @@ public class AvatarController : MonoBehaviour, IResettableCallback
         _finishedAvatars.Remove(this);
         finished = false;
         direction = startDirection;
-        arrow.transform.rotation = Quaternion.Euler(0, Vector2.Angle(Vector2.right, direction),0);
+        changeRotation(startRotation);
+    }
+
+    public void changeRotation(int newRotation) {
+        rotation = newRotation;
+        foreach(GameObject arrow in arrows) {
+            arrow.SetActive(false);
+        }
+        arrows[newRotation].SetActive(true);
     }
 }

@@ -653,6 +653,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5115949706437947723, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 711203754d375ad4881b1b4915bc9ce3, type: 2}
+    - target: {fileID: 5115949706437947723, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6137111101277158562, guid: 711203754d375ad4881b1b4915bc9ce3, type: 2}
     - target: {fileID: 5115949708049845938, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_Name
       value: Canvas

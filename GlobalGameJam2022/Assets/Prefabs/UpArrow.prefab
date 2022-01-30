@@ -59,5 +59,9 @@ PrefabInstance:
       propertyPath: board
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1733638419091748574, guid: 15f9214ca49071a43ab76089c9f0e6fe, type: 3}
+      propertyPath: rotation
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15f9214ca49071a43ab76089c9f0e6fe, type: 3}
