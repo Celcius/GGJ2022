@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Poem
   m_EditorClassIdentifier: 
   _lines:
-  - There was once a girl divided...
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
+  - There was once a girl divided%Her mind was undecided
+  - Her balance teetered as of late%A swirling, twisting mental state
+  - Black or white - are both not good?%Maybe she's misunderstood?
+  - 'Social pressures, culture ties%People''s judgement, masks, and lies '
+  - She has her sides; divide by two%Both of which must make it through
+  - 'One that''s happy, bright and pink%Who likes to talk and loves to sing '
+  - One that's quiet, dark, and grim%Knows when to listen, how to think
+  - Both are there, and it's okay%To put both sides up on display
+  - To those with hearts in disarray:%Accept yourself; the whole bouquet.
+  - The sides which make you come alive%Nurture both and surely thrive

@@ -113,7 +113,9 @@ public class LevelManager : Singleton<LevelManager>
             _finishedAvatars.Clear();
             int index = _selectedLevel.Value;
             _poemController.SetTrigger("Enter");
-            _poemLabel.text = index < _poems.Lines.Length? _poems.Lines[index] : "";
+            string text = index < _poems.Lines.Length? _poems.Lines[index] : "";
+            text = text.Replace("%",System.Environment.NewLine+System.Environment.NewLine);
+            _poemLabel.text = text;
             DisableInput();
 
             StartCoroutine(LoadLevelRoutine(index));
