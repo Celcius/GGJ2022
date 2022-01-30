@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using AmoaebaUtils;
 using TMPro;
 
@@ -150,9 +151,13 @@ public class LevelManager : Singleton<LevelManager>
     public void FinishLevel()
     {
         SoundSystem.Instance.PlaySound(_finishSound);
-        NextLevel();
-        _unlockedLevels.Value = Mathf.Max(_unlockedLevels.Value, 
-                                          _selectedLevel.Value);
+        if(_selectedLevel.Value == _levels.Value.Length - 1) {
+            SceneManager.LoadScene("EndScene");
+        } else {
+            NextLevel();
+            _unlockedLevels.Value = Mathf.Max(_unlockedLevels.Value, 
+                                              _selectedLevel.Value);
+        }
     }
 
     public void PreviousLevel()
