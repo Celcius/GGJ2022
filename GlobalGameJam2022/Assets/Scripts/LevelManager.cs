@@ -105,7 +105,7 @@ public class LevelManager : Singleton<LevelManager>
             _finishedAvatars.Clear();
             int index = _selectedLevel.Value;
             _poemController.SetTrigger("Enter");
-            _poemLabel.text = _poems.Lines[index];
+            _poemLabel.text = index < _poems.Lines.Length? _poems.Lines[index] : "";
             DisableInput();
 
             StartCoroutine(LoadLevelRoutine(index));
