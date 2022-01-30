@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: LevelRegistry
   m_EditorClassIdentifier: 
   setupValue:
+  - {fileID: 11400000, guid: fc666e344dd32b84da041a9d93bf14ce, type: 2}
+  - {fileID: 11400000, guid: 2223f72803b0c504ab371b09f5134a16, type: 2}
   - {fileID: 11400000, guid: 456ec3f66d74476459cf624e4e0f77bc, type: 2}
-  - {fileID: 11400000, guid: 79b968c3388c7224db20fd4159e01137, type: 2}
-  - {fileID: 11400000, guid: 88db80e380ca9244cb18b5fec36ceac6, type: 2}
-  - {fileID: 11400000, guid: b32c5796b51f9924ca660f5c73d0688d, type: 2}
-  - {fileID: 11400000, guid: cf93e91ce4abd2147823d86d8dba9309, type: 2}
+  - {fileID: 11400000, guid: 61b82fc7b6bd70348bbaafecad7ad60d, type: 2}
   value:
+  - {fileID: 11400000, guid: fc666e344dd32b84da041a9d93bf14ce, type: 2}
+  - {fileID: 11400000, guid: 2223f72803b0c504ab371b09f5134a16, type: 2}
   - {fileID: 11400000, guid: 456ec3f66d74476459cf624e4e0f77bc, type: 2}
-  - {fileID: 11400000, guid: 79b968c3388c7224db20fd4159e01137, type: 2}
-  - {fileID: 11400000, guid: 88db80e380ca9244cb18b5fec36ceac6, type: 2}
-  - {fileID: 11400000, guid: b32c5796b51f9924ca660f5c73d0688d, type: 2}
-  - {fileID: 11400000, guid: cf93e91ce4abd2147823d86d8dba9309, type: 2}
+  - {fileID: 11400000, guid: 61b82fc7b6bd70348bbaafecad7ad60d, type: 2}

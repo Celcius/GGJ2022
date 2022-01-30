@@ -37,12 +37,18 @@ public class LevelInstantiator : SingletonScriptableObject<LevelInstantiator>
         LoadRules();
     }
 
+    public void OnEnable()
+    {
+        LoadRules();
+    }
+
+
     public void OnAwake()
     {
         LoadRules();
     }
 
-    private async void LoadRules()
+    private void LoadRules()
     {
         _rulesDict.Clear();
         foreach(InstantiatorRule rule in _rules)
@@ -97,6 +103,8 @@ public class LevelInstantiator : SingletonScriptableObject<LevelInstantiator>
                         Vector3 pos = startPos
                                       + new Vector3(widthOffset * y, -heightOffset*x, 0);
                         Instantiate(rule.Prefab, pos, rule.Prefab.transform.rotation);
+
+                        
                     }
                 }
             }

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ff50e81a6c456242855b415c6e5db6b, type: 3}
-  m_Name: Level2
+  m_Name: Level_5
   m_EditorClassIdentifier: 
   _flattenedMap:
+  - '-'
   - '-'
   - '-'
   - '-'
@@ -29,37 +30,36 @@ MonoBehaviour:
   - '-'
   - '-'
   - '-'
-  - '-'
-  - '-'
-  - '-'
-  - '-'
+  - Arrow Down
+  - Arrow Down
   - '-'
   - End White
   - '-'
   - '-'
-  - Arrow Up
   - '-'
   - '-'
   - '-'
   - '-'
   - '-'
-  - '-'
-  - Arrow Up
-  - '-'
-  - Arrow Down
   - End Black
   - '-'
   - '-'
-  - '-'
-  - '-'
-  - '-'
   - Arrow Left
-  - Arrow Left
+  - Arrow Up
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
+  - '-'
   - '-'
   - '-'
   - '-'
   - Start Black Left
-  - '-'
   - '-'
   - '-'
   _flattenedRows: 7
