@@ -112,6 +112,7 @@ public class AvatarController : MonoBehaviour, IResettableCallback
 
                 SoundSystem.Instance.PlaySound(_finishLineSound, "Finish");
             }
+            EntityManager.Instance.disableAllArrows();
         } else if (other.gameObject.GetComponent<Board>() != null) 
         {
             StartCoroutine(gameOver());

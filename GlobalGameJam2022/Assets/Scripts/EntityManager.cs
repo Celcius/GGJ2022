@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AmoaebaUtils;
 
 public class EntityManager : SingletonScriptableObject<EntityManager>
 {
@@ -10,6 +11,8 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
     public  AvatarController _lightAvatar;
     private List<AvatarController> avatars = new List<AvatarController>();
     private List<SwitchingArrow> switchingArrows = new List<SwitchingArrow>();
+
+    private bool allowSwitching = true;
 
     public void PrepareGame()
     {
@@ -91,6 +94,7 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
     }
 
     public AvatarController getOtherAvatar(AvatarController mainAvatar) {
+        SoundSystem.Instance.PlaySound(LevelManager.Instance.swapAvatarSound, "Swapping Avatars");
         if(avatars.Contains(mainAvatar) && avatars.Count == 2) {
             return avatars[1 - avatars.IndexOf(mainAvatar)];
         } else {
@@ -99,10 +103,21 @@ public class EntityManager : SingletonScriptableObject<EntityManager>
     }
 
     public void enableAllArrows() {
-        foreach(SwitchingArrow arrow in switchingArrows) {
-            if(arrow.GetComponent<BoxCollider2D>().isTrigger) {
-                arrow.enable();
+        if(allowSwitching) {
+            foreach(SwitchingArrow arrow in switchingArrows) {
+                if(arrow.GetComponent<BoxCollider2D>().isTrigger) {
+                    arrow.enable();
+                }
             }
         }
+    }
+
+    public void disableAllArrows() {
+        foreach(SwitchingArrow arrow in switchingArrows) {
+            if(!arrow.GetComponent<BoxCollider2D>().isTrigger) {
+                arrow.disable();
+            }
+        }
+        allowSwitching = false;
     }
 }

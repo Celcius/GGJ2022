@@ -21,6 +21,8 @@ public class LevelManager : Singleton<LevelManager>
 
     public bool HasMoved = false;
 
+    public AudioClip swapAvatarSound;
+
     [SerializeField]
     private KeyCode exitKey = UnityEngine.KeyCode.Escape;
     

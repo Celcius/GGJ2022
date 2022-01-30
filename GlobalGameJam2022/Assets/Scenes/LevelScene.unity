@@ -610,6 +610,10 @@ PrefabInstance:
       propertyPath: _poemController
       value: 
       objectReference: {fileID: 598964433}
+    - target: {fileID: 2394164394927310686, guid: d839f692c7b807b478be1b7f611bc1a7, type: 3}
+      propertyPath: swapAvatarSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 13b10d123d50fb74ab10bf9557e95eae, type: 3}
     - target: {fileID: 2394164394927310687, guid: d839f692c7b807b478be1b7f611bc1a7, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -661,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 696521599242947122, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160.50002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 696521599242947122, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.y
@@ -685,7 +689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1200467938169857137, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160.50002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1200467938169857137, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1001,7 +1005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229809552310477860, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160.50002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7229809552310477860, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1025,7 +1029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229809552533049137, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160.50002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7229809552533049137, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1049,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7229809553947937312, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160.50002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7229809553947937312, guid: 0d9e6e6bb5ffc284ebda50939f53a356, type: 3}
       propertyPath: m_SizeDelta.y
